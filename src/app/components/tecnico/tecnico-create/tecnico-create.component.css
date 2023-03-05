@@ -28,6 +28,10 @@ button {
     margin-top: .5rem;
 }
 
-.text {
-    color: rgb(51 57 138 / 90%)
+p {
+    opacity: .3;
+}
+
+mat-icon {
+   opacity: .5;
 }
