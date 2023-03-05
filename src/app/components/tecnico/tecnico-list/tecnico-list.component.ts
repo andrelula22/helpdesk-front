@@ -1,39 +1,39 @@
-import { Tecnico } from './../../../models/tecnico';
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatTableDataSource } from '@angular/material/table';
+import { TecnicoService } from './../../../services/tecnico.service';
+import { Tecnico } from "./../../../models/tecnico";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { MatPaginator } from "@angular/material/paginator";
+import { MatTableDataSource } from "@angular/material/table";
 
 @Component({
-  selector: 'app-tecnico-list',
-  templateUrl: './tecnico-list.component.html',
-  styleUrls: ['./tecnico-list.component.css']
+  selector: "app-tecnico-list",
+  templateUrl: "./tecnico-list.component.html",
+  styleUrls: ["./tecnico-list.component.css"],
 })
 export class TecnicoListComponent implements OnInit {
+  ELEMENT_DATA: Tecnico[] = [];
 
-  ELEMENT_DATA: Tecnico[] = [
-    {
-      id: 1,
-      nome: 'Andre Lula',
-      cpf: '044.890.366-04',
-      email: 'andre@gmail.com',
-      senha: '123',
-      perfis: ['0'],
-      dataCriacao: '15/02/2023'
-    }
-  ]
-  
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'acoes'];
+  displayedColumns: string[] = ['id', 'nome', 'cpf', 'email', 'acoes'];
   dataSource = new MatTableDataSource<Tecnico>(this.ELEMENT_DATA);
-
+  
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-  }
-  
-  constructor() { }
+  constructor(private service: TecnicoService) {}
 
   ngOnInit(): void {
+    this.findAll();
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  findAll(){
+    this.service.findAll().subscribe(resposta => {
+      this.ELEMENT_DATA = resposta
+      this.dataSource = new MatTableDataSource<Tecnico>(resposta);
+      this.dataSource.paginator = this.paginator;
+    })
   }
 
 }

@@ -6,3 +6,12 @@
 table {
     width: 100%;
   }
+
+.mat-flat-button {
+   width: 100%;
+}
+
+h1 {
+    text-align:center;
+    text-decoration: underline;
+}

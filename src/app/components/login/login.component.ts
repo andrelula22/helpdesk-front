@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
   logar() {
     this.service.authenticate(this.creds).subscribe(resposta => {
-      this.service.successfulLogin(resposta.headers.get('Authorization').substring(7));
+      this.service.successfulLogin(resposta.headers.get('Authorization').substring(6));
       this.router.navigate([''])
     }, ()=> {
       this.toast.error('Usuário e/ou senha inválidos!');

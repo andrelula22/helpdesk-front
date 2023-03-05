@@ -11,7 +11,7 @@ const routes: Routes = [
   {
     path:'', component: NavComponent, canActivate:[AuthGuard], children:[
       {path:'home', component:HomeComponent},
-      {path: 'tecnico', component: TecnicoListComponent}
+      {path: 'tecnicos', component: TecnicoListComponent}
     ]
   }
 ];
