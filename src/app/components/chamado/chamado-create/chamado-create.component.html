@@ -9,57 +9,70 @@
   <form class="form">
     <mat-form-field class="full-width" appearance="outline">
       <mat-label>Título do Chamado</mat-label>
-      <input matInput placeholder="Ex. Trocar bateria de notebook" />
+      <input
+        matInput
+        placeholder="Ex. Trocar bateria de notebook"
+        required
+        [formControl]="titulo"
+      />
     </mat-form-field>
   </form>
 
   <div class="status-prioridade">
     <mat-form-field appearance="outline">
-        <mat-label>Selecione um status</mat-label>
-        <mat-select>
-          <mat-option value="0">ABERTO</mat-option>
-          <mat-option value="1">EM ANDAMENTO</mat-option>
-          <mat-option value="2">ENCERRADO</mat-option>
-        </mat-select>
-      </mat-form-field>
+      <mat-label>Selecione um status</mat-label>
+      <mat-select required [formControl]="status">
+        <mat-option value="0">ABERTO</mat-option>
+        <mat-option value="1">EM ANDAMENTO</mat-option>
+        <mat-option value="2">ENCERRADO</mat-option>
+      </mat-select>
+    </mat-form-field>
 
     <mat-form-field appearance="outline">
-        <mat-label>Selecione uma prioridade</mat-label>
-        <mat-select>
-          <mat-option value="0">BAIXA</mat-option>
-          <mat-option value="1">MÉDIA</mat-option>
-          <mat-option value="2">ALTA</mat-option>
-        </mat-select>
-      </mat-form-field>
+      <mat-label>Selecione uma prioridade</mat-label>
+      <mat-select required [formControl]="prioridade">
+        <mat-option value="0">BAIXA</mat-option>
+        <mat-option value="1">MÉDIA</mat-option>
+        <mat-option value="2">ALTA</mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
 
   <div class="tecnico">
     <mat-form-field class="full-width" appearance="outline">
-        <mat-label>Selecione um técnico</mat-label>
-        <mat-select>
-          <mat-option value="0">Andre Lula</mat-option>
-        </mat-select>
-      </mat-form-field>
+      <mat-label>Selecione um técnico</mat-label>
+      <mat-select required [formControl]="tecnico">
+        <mat-option value="0">Andre Lula</mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
 
   <div class="cliente">
     <mat-form-field class="full-width" appearance="outline">
-        <mat-label>Selecione um cliente</mat-label>
-        <mat-select>
-          <mat-option value="0">Albert Einstein</mat-option>
-        </mat-select>
-      </mat-form-field>
+      <mat-label>Selecione um cliente</mat-label>
+      <mat-select required [formControl]="cliente">
+        <mat-option value="0">Albert Einstein</mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
 
   <form class="form">
     <mat-form-field class="full-width" appearance="outline">
       <mat-label>Deixe uma descrição</mat-label>
-      <textarea class="descricao" matInput placeholder="Ex. Trocar fonte queimada do computador..."></textarea>
+      <textarea
+        class="descricao"
+        matInput
+        placeholder="Ex. Trocar fonte queimada do computador..."
+        required
+        [formControl]="descricao"
+      ></textarea>
     </mat-form-field>
   </form>
   <div class="buttons">
-    <button mat-raised-button color="primary">Adicionar Chamado</button>
-    <button mat-stroked-button color="warn">Cancelar</button>
+    <button [disabled]="!validaCampos()" mat-raised-button color="primary">
+      Adicionar Chamado
+    </button>
+    <button routerLink="../" mat-stroked-button color="warn">Cancelar</button>
   </div>
   <p class="full-width">Desenvolvido por Andre Lula (curso Udemy)</p>
 </div>
