@@ -1,0 +1,35 @@
+.container {
+    width:90%;
+    margin:20px auto;
+}
+
+table {
+    width: 100%;
+  }
+
+.mat-flat-button {
+   width: 100%;
+}
+
+h1 {
+    text-align:center;
+    text-decoration: underline;
+}
+
+.edit{
+    color: #4E07B3;
+}
+
+.delete{
+    color: #4E07B3;
+}
+
+mat-radio-button{
+    padding: 25px 0px 0px 10px;
+}
+
+.radios-status {
+    display: flex;
+    justify-content: space-between;
+    margin-top:40px;
+}
