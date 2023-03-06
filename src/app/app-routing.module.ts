@@ -12,6 +12,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NavComponent } from './components/nav/nav.component';
 import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
+import { ChamadoListComponent } from './components/chamado/chamado-list/chamado-list.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -27,6 +28,8 @@ const routes: Routes = [
       {path:'clientes/create', component: ClienteCreateComponent},
       {path:'clientes/update/:id', component: ClienteUpdateComponent},
       {path:'clientes/delete/:id', component: ClienteDeleteComponent},
+
+      {path:'chamados', component: ChamadoListComponent},
     ]
   }
 ];
