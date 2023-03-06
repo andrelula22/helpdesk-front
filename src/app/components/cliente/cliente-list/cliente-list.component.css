@@ -1,0 +1,25 @@
+.container {
+    width:90%;
+    margin:20px auto;
+}
+
+table {
+    width: 100%;
+  }
+
+.mat-flat-button {
+   width: 100%;
+}
+
+h1 {
+    text-align:center;
+    text-decoration: underline;
+}
+
+.edit{
+    color: #4E07B3;
+}
+
+.delete{
+    color: #4E07B3;
+}
