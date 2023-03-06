@@ -15,3 +15,11 @@ h1 {
     text-align:center;
     text-decoration: underline;
 }
+
+.edit{
+    color: #4E07B3;
+}
+
+.delete{
+    color: #4E07B3;
+}
