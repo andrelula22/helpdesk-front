@@ -15,6 +15,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NavComponent } from './components/nav/nav.component';
 import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
 import { ChamadoListComponent } from './components/chamado/chamado-list/chamado-list.component';
+import { ChamadoReadComponent } from './components/chamado/chamado-read/chamado-read.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -34,6 +35,7 @@ const routes: Routes = [
       {path:'chamados', component: ChamadoListComponent},
       {path:'chamados/create', component: ChamadoCreateComponent},
       {path:'chamados/update/:id', component: ChamadoUpdateComponent},
+      {path:'chamados/read/:id', component: ChamadoReadComponent},
     ]
   }
 ];
